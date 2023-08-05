@@ -7,7 +7,7 @@ import About from './Pages/About';
 
 function App() {
 const [catFact , setCatFact] = useState("")
-const [showCatFact,setshowCatFact]=useState('true')
+const [showCatFact,setshowCatFact]=useState('false')
 
 // useEffect(()=>{
 //   showFact()
@@ -16,7 +16,7 @@ const showFact=()=>{
     Axios.get("https://catfact.ninja/fact").then(res=>{
     setCatFact(res.data.fact)
   });
-  setshowCatFact('false')
+  setshowCatFact('true')
 }
 
   return (
@@ -28,7 +28,7 @@ const showFact=()=>{
       </Routes>
     </Router>
     <button onClick={showFact}>Fetch Data</button>
-    {showCatFact === 'false' ?  <p>{catFact}</p> : <p>NO message</p>}
+    {showCatFact === 'true' ?  <p>{catFact}</p> : <p>NO message</p>}
    </div>
     
   );
