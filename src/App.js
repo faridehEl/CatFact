@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About';
+import Contact from './Pages/contact';
 
 function App() {
 const [catFact , setCatFact] = useState("")
@@ -25,6 +26,7 @@ const showFact=()=>{
       <Routes>
         <Route  path='/home' element={<Home></Home>}/>
         <Route  path='/about' element={<About></About>}/>
+        <Route  path='/contact' element={<Contact></Contact>}/>
       </Routes>
     </Router>
     <button onClick={showFact}>Fetch Data</button>
